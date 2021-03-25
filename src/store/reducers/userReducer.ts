@@ -13,9 +13,9 @@ export const userReducer = (state = initialState, action: UserActions): UserStat
         case UserActionType.FETCH_USERS:
             return {loading: true, error: null, users: []}
         case UserActionType.FETCH_USERS_SUCCESS:
-            return {loading: true, error: null, users: action.payload}
+            return {loading: false, error: null, users: action.payload}
         case UserActionType.FETCH_USERS_ERROR:
-            return {loading: true, error: action.payload, users: []}
+            return {loading: false, error: action.payload, users: []}
     }
     return state
 }
